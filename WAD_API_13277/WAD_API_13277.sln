@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAD_API_13277", "WAD_API_13277\WAD_API_13277.csproj", "{6F550B61-61A1-464C-8ED0-53808A713FC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAD_DAL_13277", "WAD_DAL_13277\WAD_DAL_13277.csproj", "{4228B386-864A-495F-AFD0-3BFCB269D5CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6F550B61-61A1-464C-8ED0-53808A713FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F550B61-61A1-464C-8ED0-53808A713FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F550B61-61A1-464C-8ED0-53808A713FC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4228B386-864A-495F-AFD0-3BFCB269D5CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4228B386-864A-495F-AFD0-3BFCB269D5CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4228B386-864A-495F-AFD0-3BFCB269D5CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4228B386-864A-495F-AFD0-3BFCB269D5CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
