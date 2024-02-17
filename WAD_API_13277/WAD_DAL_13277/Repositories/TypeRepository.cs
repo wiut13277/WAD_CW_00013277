@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WAD_API_13277.Models;
+﻿using WAD_DAL_13277.Models;
 using WAD_DAL_13277.Data;
 
 namespace WAD_DAL_13277.Repositories
@@ -12,14 +7,15 @@ namespace WAD_DAL_13277.Repositories
     {
         private readonly MainDbContext _mainDbContext;
 
-        public TypeRepository(MainDbContext mainDbContext) 
+        public TypeRepository(MainDbContext mainDbContext)
         {
             _mainDbContext = mainDbContext;
         }
 
         public void Create(FeedbackType entity)
         {
-            throw new NotImplementedException();
+            _mainDbContext.Types.Add(entity);
+            Save();
         }
 
         public void Delete(int id)
@@ -27,16 +23,8 @@ namespace WAD_DAL_13277.Repositories
             var type = _mainDbContext.Types.FirstOrDefault(t => t.Id == id);
             if (type != null)
             {
-                try
-                {
-                    _mainDbContext.Types.Remove(type);
-                    _mainDbContext.SaveChanges();
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                } 
+                _mainDbContext.Types.Remove(type);
+                Save();
             }
             throw new Exception();
         }
@@ -46,14 +34,34 @@ namespace WAD_DAL_13277.Repositories
             return _mainDbContext.Types.ToList();
         }
 
-        public FeedbackType? GetById(int id)
+        public FeedbackType GetById(int id)
         {
-            return _mainDbContext.Types.FirstOrDefault(t => t.Id == id);
+            var feedbackType = _mainDbContext.Types.FirstOrDefault(t => t.Id == id);
+            if (feedbackType == null)
+                throw new Exception();
+
+            return feedbackType;
         }
 
-        public void Update(FeedbackType entity)
+        public void Update(FeedbackType entity, int id)
         {
-            throw new NotImplementedException();
+            var feedbackType = GetById(id);
+
+            feedbackType.Name = entity.Name;
+
+            Save();
+        }
+
+        private void Save()
+        {
+            try
+            {
+                _mainDbContext.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

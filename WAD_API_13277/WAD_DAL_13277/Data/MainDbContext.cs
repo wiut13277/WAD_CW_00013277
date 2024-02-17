@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WAD_API_13277.Models;
+using WAD_DAL_13277.Models;
 
 namespace WAD_DAL_13277.Data
 {

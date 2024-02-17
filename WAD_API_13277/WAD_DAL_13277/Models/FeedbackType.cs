@@ -1,4 +1,4 @@
-﻿namespace WAD_API_13277.Models
+﻿namespace WAD_DAL_13277.Models
 {
     public class FeedbackType
     {
