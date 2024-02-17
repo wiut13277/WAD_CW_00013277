@@ -14,7 +14,7 @@ namespace WAD_DAL_13277.Repositories
 
         public void Create(FeedbackType entity)
         {
-            _mainDbContext.Types.AddAsync(entity);
+            _mainDbContext.Types.Add(entity);
             Save();
         }
 
