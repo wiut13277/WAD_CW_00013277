@@ -15,6 +15,9 @@ namespace WAD_DAL_13277.Repositories
 
         public void Create(Feedback entity)
         {
+            var feedbackType = _mainDbContext.Types.FirstOrDefault(t => t.Id == entity.Type.Id);
+            entity.Type = feedbackType;
+
             _mainDbContext.Feedbacks.Add(entity);
 
             Save();
@@ -47,10 +50,12 @@ namespace WAD_DAL_13277.Repositories
         public void Update(Feedback entity, int id)
         {
             var feedback = GetById(id);
+            var feedbackType = _mainDbContext.Types.FirstOrDefault(t => t.Id ==entity.Type.Id);
+
 
             feedback.Title = entity.Title;
             feedback.Description = entity.Description;
-            feedback.Type = entity.Type;
+            feedback.Type = feedbackType;
 
             Save();
         }
