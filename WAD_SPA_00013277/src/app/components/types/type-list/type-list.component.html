@@ -1,0 +1,21 @@
+<p>Types</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (type of types; track $index) {
+            <tr>
+                <td>{{type.id}}</td>
+                <td>{{type.name}}</td>
+                <td>
+                    <a [routerLink]="['/edit-type', type.id]"></a> | <a [routerLink]="['/delete-type', type.id]"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
