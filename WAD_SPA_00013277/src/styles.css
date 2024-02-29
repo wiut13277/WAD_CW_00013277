@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+input, textarea, select, button{
+    width: 30%;
+    margin-bottom: 15px;
+}
+
+label{
+    font-size: 1.5rem;
+}
+
+button{
+    width: 10%;
+    height: 40px;
+    border: 0px;
+    background-color: green;
+    color: white;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: green;
+}
+
+textarea{
+    height: 100px;
+}
+
+input{
+    width: 10%;
+}
+
+select{
+    width: 10%;
+}
