@@ -23,7 +23,8 @@ export class TypesService {
   }
 
   deleteType(id: number): Observable<any>{
-    return this.http.delete<Type>(`${this.apiUrl}${id}`);
+    const url = `${this.apiUrl}${id}`;
+    return this.http.delete<Type>(url);
   }
 
   updateType(id: number, type: Type){

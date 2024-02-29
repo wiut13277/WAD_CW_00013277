@@ -1,1 +1,6 @@
-<p>type-edit works!</p>
+<form (ngSubmit)="editType(type); $event.preventDefault()">
+    <label for="name">Name</label>
+    <input type="text" name="name" [(ngModel)]="type.name" required/>
+
+    <button type="submit">Submit</button>
+</form>

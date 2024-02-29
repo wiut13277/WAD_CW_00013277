@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Type } from '../../../models/type.model';
 import { TypesService } from '../types.service';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { error } from 'console';
 
 @Component({
   selector: 'app-type-list',
@@ -13,7 +14,7 @@ import { RouterLink } from '@angular/router';
 export class TypeListComponent {
   types!: Type[];
 
-  constructor(private typeService: TypesService){}
+  constructor(private typeService: TypesService,  private router: Router){}
 
   ngOnInit(): void{
     this.getTypes();

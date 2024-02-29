@@ -16,7 +16,7 @@
                 <td>{{type.id}}</td>
                 <td>{{type.name}}</td>
                 <td>
-                    <a [routerLink]="['/edit-type', type.id]"></a> | <a [routerLink]="['/delete-type', type.id]"></a>
+                    <a [routerLink]="['/editType', type.id]">Edit</a> | <a [routerLink]="['/deleteType', type.id]">Delete</a>
                 </td>
             </tr>
         }

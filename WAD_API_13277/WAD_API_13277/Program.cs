@@ -28,6 +28,7 @@ builder.Services.AddCors(o =>
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -35,9 +36,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAllOrigins");
+
 app.UseHttpsRedirection();
 
-app.UseCors("AllowAllOrigins");
+
 
 app.UseAuthorization();
 

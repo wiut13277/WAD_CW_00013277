@@ -21,12 +21,10 @@ namespace WAD_DAL_13277.Repositories
         public void Delete(int id)
         {
             var type = _mainDbContext.Types.FirstOrDefault(t => t.Id == id);
-            if (type != null)
-            {
-                _mainDbContext.Types.Remove(type);
-                Save();
-            }
-            throw new Exception();
+            if (type == null) throw new Exception();
+
+            _mainDbContext.Types.Remove(type);
+            Save();   
         }
 
         public IEnumerable<FeedbackType> GetAll()
