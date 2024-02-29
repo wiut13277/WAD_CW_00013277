@@ -7,7 +7,7 @@ import { Type } from '../../models/type.model';
   providedIn: 'root'
 })
 export class TypesService {
-  private apiUrl = 'https://localhost:7061/api/type/'
+  private apiUrl = 'https://localhost:5001/api/type/'
   constructor(private http: HttpClient) { }
 
   getTypes(): Observable<Type[]>{

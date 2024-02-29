@@ -3,6 +3,7 @@ import { Type } from '../../../models/type.model';
 import { TypesService } from '../types.service';
 import { Router } from '@angular/router';
 import { error } from 'console';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-type-create',
