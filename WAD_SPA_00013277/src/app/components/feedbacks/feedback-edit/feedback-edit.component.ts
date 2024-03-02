@@ -45,7 +45,6 @@ export class FeedbackEditComponent implements OnInit{
       .subscribe(feedback => {
         this.feedback = feedback;
       });
-    
   }
 
   editFeedback(feedback: Feedback){
