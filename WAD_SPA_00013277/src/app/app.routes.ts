@@ -1,20 +1,20 @@
 import { Routes } from '@angular/router';
-import { TypeListComponent } from './components/types/type-list/type-list.component';
-import { TypeCreateComponent } from './components/types/type-create/type-create.component';
-import { TypeEditComponent } from './components/types/type-edit/type-edit.component';
-import { TypeDeleteComponent } from './components/types/type-delete/type-delete.component';
-import { FeedbackListComponent } from './components/feedbacks/feedback-list/feedback-list.component';
-import { FeedbackEditComponent } from './components/feedbacks/feedback-edit/feedback-edit.component';
-import { FeedbackCreateComponent } from './components/feedbacks/feedback-create/feedback-create.component';
-import { FeedbackDeleteComponent } from './components/feedbacks/feedback-delete/feedback-delete.component';
+import { PriorityListComponent } from './components/priorities/priority-list/priority-list.component';
+import { PriorityCreateComponent } from './components/priorities/priority-create/priority-create.component';
+import { PriorityEditComponent } from './components/priorities/priority-edit/priority-edit.component';
+import { PriorityDeleteComponent } from './components/priorities/priority-delete/priority-delete.component';
+import { IssueListComponent } from './components/issues/issue-list/issue-list.component';
+import { IssueEditComponent } from './components/issues/issue-edit/issue-edit.component';
+import { IssueCreateComponent } from './components/issues/issue-create/issue-create.component';
+import { IssueDeleteComponent } from './components/issues/issue-delete/issue-delete.component';
 
 export const routes: Routes = [
-    { path: 'types', component: TypeListComponent },
-    { path: 'createType', component: TypeCreateComponent },
-    { path: 'editType/:id', component: TypeEditComponent },
-    { path: 'deleteType/:id', component: TypeDeleteComponent },
-    { path: 'feedbacks', component: FeedbackListComponent },
-    { path: 'createFeedback', component: FeedbackCreateComponent },
-    { path: 'editFeedback/:id', component: FeedbackEditComponent },
-    { path: 'deleteFeedback/:id', component: FeedbackDeleteComponent }
+    { path: 'priorities', component: PriorityListComponent },
+    { path: 'createPriority', component: PriorityCreateComponent },
+    { path: 'editPriority/:id', component: PriorityEditComponent },
+    { path: 'deletePriority/:id', component: PriorityDeleteComponent },
+    { path: 'issues', component: IssueListComponent },
+    { path: 'createIssue', component: IssueCreateComponent },
+    { path: 'editIssue/:id', component: IssueEditComponent },
+    { path: 'deleteIssue/:id', component: IssueDeleteComponent }
 ];

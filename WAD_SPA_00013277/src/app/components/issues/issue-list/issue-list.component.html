@@ -1,0 +1,28 @@
+<p>Issues</p>
+
+<button routerLink="/createIssue">Create Issue</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Priority</th>
+            <th>Opened On</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (issue of issues; track $index) {
+            <tr>
+                <td>{{issue.id}}</td>
+                <td>{{issue.title}}</td>
+                <td>{{issue.priority.name}}</td>
+                <td>{{issue.openedOn}}</td>
+                <td>
+                    <a [routerLink]="['/editIssue', issue.id]">Edit</a> | <a [routerLink]="['/deleteIssue', issue.id]">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

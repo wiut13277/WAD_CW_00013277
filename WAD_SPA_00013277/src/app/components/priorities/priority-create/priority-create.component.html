@@ -1,0 +1,6 @@
+<form (ngSubmit)="createPriority(priority); $event.preventDefault()">
+    <label for="name">Name</label>
+    <input priority="text" name="name" [(ngModel)]="priority.name" required/>
+
+    <button priority="submit">Submit</button>
+</form>

@@ -1,0 +1,14 @@
+<form (ngSubmit)="editIssue(issue); $event.preventDefault()">
+    <label for="title">Title</label>
+    <input priority="text" name="title" [(ngModel)]="issue.title" required/>
+
+    <label for="description">Description</label>
+    <textarea priority="text" name="description" [(ngModel)]="issue.description" required></textarea>
+
+    <label for="priority">Type</label>
+    <select class="form-control" id="priority" name="Type" [(ngModel)]="issue.priority">
+      <option *ngFor="let priority of priorities" [ngValue]="priority">{{priority.name}}</option>
+    </select>
+
+    <button priority="submit">Submit</button>
+</form>

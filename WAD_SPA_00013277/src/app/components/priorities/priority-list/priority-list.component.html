@@ -1,0 +1,24 @@
+<p>Priorities</p>
+
+<button routerLink="/createPriority">Create Priority</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (priority of priorities; track $index) {
+            <tr>
+                <td>{{priority.id}}</td>
+                <td>{{priority.name}}</td>
+                <td>
+                    <a [routerLink]="['/editPriority', priority.id]">Edit</a> | <a [routerLink]="['/deletePriority', priority.id]">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
