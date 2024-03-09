@@ -3,45 +3,45 @@ using WAD_DAL_13277.Data;
 
 namespace WAD_DAL_13277.Repositories
 {
-    public class TypeRepository : ICRUDRepository<FeedbackType>
+    public class PriorityRepository : ICRUDRepository<Priority>
     {
         private readonly MainDbContext _mainDbContext;
 
-        public TypeRepository(MainDbContext mainDbContext)
+        public PriorityRepository(MainDbContext mainDbContext)
         {
             _mainDbContext = mainDbContext;
         }
 
-        public void Create(FeedbackType entity)
+        public void Create(Priority entity)
         {
-            _mainDbContext.Types.Add(entity);
+            _mainDbContext.Priorities.Add(entity);
             Save();
         }
 
         public void Delete(int id)
         {
-            var type = _mainDbContext.Types.FirstOrDefault(t => t.Id == id);
-            if (type == null) throw new Exception();
+            var priority = _mainDbContext.Priorities.FirstOrDefault(t => t.Id == id);
+            if (priority == null) throw new Exception();
 
-            _mainDbContext.Types.Remove(type);
+            _mainDbContext.Priorities.Remove(priority);
             Save();   
         }
 
-        public IEnumerable<FeedbackType> GetAll()
+        public IEnumerable<Priority> GetAll()
         {
-            return _mainDbContext.Types.ToList();
+            return _mainDbContext.Priorities.ToList();
         }
 
-        public FeedbackType GetById(int id)
+        public Priority GetById(int id)
         {
-            var feedbackType = _mainDbContext.Types.FirstOrDefault(t => t.Id == id);
+            var feedbackType = _mainDbContext.Priorities.FirstOrDefault(t => t.Id == id);
             if (feedbackType == null)
                 throw new Exception();
 
             return feedbackType;
         }
 
-        public void Update(FeedbackType entity, int id)
+        public void Update(Priority entity, int id)
         {
             var feedbackType = GetById(id);
 

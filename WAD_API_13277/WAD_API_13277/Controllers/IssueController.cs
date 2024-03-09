@@ -6,11 +6,11 @@ namespace WAD_API_13277.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TypeController : ControllerBase
+    public class IssueController : ControllerBase
     {
-        private readonly ICRUDRepository<FeedbackType> _repository;
+        private readonly ICRUDRepository<Issue> _repository;
 
-        public TypeController(ICRUDRepository<FeedbackType> repository)
+        public IssueController(ICRUDRepository<Issue> repository)
         {
             _repository = repository;
         }
@@ -42,11 +42,11 @@ namespace WAD_API_13277.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(FeedbackType type, int id)
+        public IActionResult Update(Issue issue, int id)
         {
             try
             {
-                _repository.Update(type, id);
+                _repository.Update(issue, id);
                 return Ok();
             }
             catch (Exception e)
@@ -56,11 +56,11 @@ namespace WAD_API_13277.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(FeedbackType type)
+        public IActionResult Create(Issue issue)
         {
             try
             {
-                _repository.Create(type);
+                _repository.Create(issue);
                 return Ok();
             }
             catch (Exception e)

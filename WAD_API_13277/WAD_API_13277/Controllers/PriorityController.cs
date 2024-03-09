@@ -6,11 +6,11 @@ namespace WAD_API_13277.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FeedbackController : ControllerBase
+    public class PriorityController : ControllerBase
     {
-        private readonly ICRUDRepository<Feedback> _repository;
+        private readonly ICRUDRepository<Priority> _repository;
 
-        public FeedbackController(ICRUDRepository<Feedback> repository)
+        public PriorityController(ICRUDRepository<Priority> repository)
         {
             _repository = repository;
         }
@@ -42,11 +42,11 @@ namespace WAD_API_13277.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(Feedback type, int id)
+        public IActionResult Update(Priority priority, int id)
         {
             try
             {
-                _repository.Update(type, id);
+                _repository.Update(priority, id);
                 return Ok();
             }
             catch (Exception e)
@@ -56,11 +56,11 @@ namespace WAD_API_13277.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Feedback type)
+        public IActionResult Create(Priority priority)
         {
             try
             {
-                _repository.Create(type);
+                _repository.Create(priority);
                 return Ok();
             }
             catch (Exception e)

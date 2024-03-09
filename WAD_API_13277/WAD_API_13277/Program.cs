@@ -14,8 +14,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<MainDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddTransient<ICRUDRepository<FeedbackType>, TypeRepository>();
-builder.Services.AddTransient<ICRUDRepository<Feedback>, FeedbackRepository>();
+builder.Services.AddTransient<ICRUDRepository<Priority>, PriorityRepository>();
+builder.Services.AddTransient<ICRUDRepository<Issue>, IssueRepository>();
 
 builder.Services.AddCors(o =>
     o.AddPolicy("AllowAllOrigins",

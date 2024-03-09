@@ -5,8 +5,8 @@ namespace WAD_DAL_13277.Data
 {
     public class MainDbContext : DbContext
     {
-        public DbSet<Feedback> Feedbacks { get; set; }
-        public DbSet<FeedbackType> Types { get; set; }
+        public DbSet<Issue> Issues { get; set; }
+        public DbSet<Priority> Priorities { get; set; }
 
         public MainDbContext(DbContextOptions<MainDbContext> options) : base(options) 
         { 
